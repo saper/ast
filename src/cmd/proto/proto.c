@@ -14,7 +14,7 @@
 *                            AT&T Research                             *
 *                           Florham Park NJ                            *
 *                                                                      *
-*                 Glenn Fowler <gsf@research.att.com>                  *
+*               Glenn Fowler <glenn.s.fowler@gmail.com>                *
 *                                                                      *
 ***********************************************************************/
 #pragma prototyped
@@ -396,6 +396,15 @@ proto(char* file, char* license, char* options, char* package, char* copy, char*
 
 #if !PROTO_STANDALONE
 #undef	error
+void
+error( int xit, const char *msg, ... )
+{
+	va_list ap;
+	va_start( ap, msg );
+	vfprintf( stderr, msg, ap );
+	va_end( ap );
+	exit( xit );
+}
 #endif
 
 typedef struct Sufcom_s

@@ -14,7 +14,7 @@
 *                            AT&T Research                             *
 *                           Florham Park NJ                            *
 *                                                                      *
-*                 Glenn Fowler <gsf@research.att.com>                  *
+*               Glenn Fowler <glenn.s.fowler@gmail.com>                *
 *                                                                      *
 ***********************************************************************/
 #pragma prototyped
@@ -42,6 +42,9 @@ NoN(pss_kvm)
 #endif
 #if _sys_proc
 #include <sys/proc.h>
+#endif
+#if _sys_user
+#include <sys/user.h>
 #endif
 #include <sys/sysctl.h>
 #include <sys/tty.h>
