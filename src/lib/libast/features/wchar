@@ -53,6 +53,7 @@ endif
 run{
 cat <<!
 	#if _hdr_wchar && defined(_nxt_wchar)
+	#define _STDFILE_DECLARED
 	#include ${_nxt_wchar-_nxt_wchar}	/* the native wchar.h */
 	#endif
 
